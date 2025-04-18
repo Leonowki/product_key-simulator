@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="scripts.js"></script>
+    <title>FA Product Key Validator</title>
+</head>
+<body>
+    <div class="title">
+        <h1>NFA simulator</h1>
+        <p>License Key in a format of XXXX-XXXX-XXXX</p>
+    </div>
+    <div>
+    <div class="user-input">
+        <div>
+            <input type="text" id="keyInput" placeholder="XXXX-XXXX-XXXX">
+        </div>
+        <div>
+            <button onclick="CheckValidity()">Validate input</button>
+            <h5 class="current-input" id="userInput">Input:</h5>
+        </div>
+    </div>
+    <!-- terminal-ish for display -->
+    <div class="screen-board" id="user-screen">
+
+    </div>
+
+    <div class="automaton-board" id="automatonBoard">
+        <!-- States here -->
+        <div class="initial" style="top: 30px; left: 5px;"></div>
+        <div class="state" id="q0" style="top: 20px; left: 35px;">q0</div>
+        <div class="state" id="q1" style="top: 20px; left: 170px;">q1</div>
+        <div class="state" id="q2" style="top: 20px; left: 300px;">q2</div>
+        <div class="state" id="q3" style="top: 20px; left: 440px;">q3</div>
+        <div class="state" id="q4" style="top: 20px; left: 560px;">q4</div>
+        <div class="state" id="q5" style="top: 160px; left:35px;">q5</div>
+        <div class="state" id="q6" style="top: 160px; left:170px">q6</div>
+        <div class="state" id="q7" style="top: 160px; left:300px">q7</div>
+        <div class="state" id="q8" style="top: 160px; left:440px">q8</div>
+        <div class="state" id="q9" style="top: 160px; left:560px">q9</div>
+        <div class="state" id="q10" style="top: 320px; left:35px">q10</div>
+        <div class="state" id="q11" style="top: 320px; left:170px">q11</div>
+        <div class="state" id="q12" style="top: 320px; left:300px">q12</div>
+        <div class="state" id="q13" style="top: 320px; left:440px">q13</div>
+
+
+        <!-- SVG arrows -->
+        <svg class="svg-overlay">
+    
+            <!-- Top row q0 to q4 -->
+            <line x1="98" y1="50" x2="170" y2="50" stroke="black" marker-end="url(#arrow)" /> <!-- q0 to q1 -->
+            <line x1="232" y1="50" x2="300" y2="50" stroke="black" marker-end="url(#arrow)" /> <!-- q1 to q2 -->
+            <line x1="363" y1="50" x2="440" y2="50" stroke="black" marker-end="url(#arrow)" /> <!-- q2 to q3 -->
+            <line x1="501" y1="50" x2="560" y2="50" stroke="black" marker-end="url(#arrow)" /> <!-- q3 to q4 -->
+
+            <!-- q4 to q5 (curve) -->
+            <path d="M 580 81 Q 350 120 95 180" stroke="black" fill="transparent" marker-end="url(#arrow)" />
+
+            <!-- Middle row q5 to q9 -->
+            <line x1="97" y1="190" x2="170" y2="190" stroke="black" marker-end="url(#arrow)" /> <!-- q5 to q6 -->
+            <line x1="232" y1="190" x2="300" y2="190" stroke="black" marker-end="url(#arrow)" /> <!-- q6 to q7 -->
+            <line x1="362" y1="190" x2="440" y2="190" stroke="black" marker-end="url(#arrow)" /> <!-- q7 to q8 -->
+            <line x1="502" y1="190" x2="560" y2="190" stroke="black" marker-end="url(#arrow)" /> <!-- q8 to q9 -->
+
+            <!-- q9 to q10 (curve) -->
+            <path d="M 580 221 Q 590 230 90 330" stroke="black" fill="transparent" marker-end="url(#arrow)" />
+
+            <!-- Bottom row q10 to q14 -->
+            <line x1="97" y1="350" x2="170" y2="350" stroke="black" marker-end="url(#arrow)" /> <!-- q10 to q11 -->
+            <line x1="232" y1="350" x2="300" y2="350" stroke="black" marker-end="url(#arrow)" /> <!-- q11 to q12 -->
+            <line x1="362" y1="350" x2="440" y2="350" stroke="black" marker-end="url(#arrow)" /> <!-- q12 to q13 -->
+
+            <!-- Arrowhead definition -->
+            <defs>
+                <marker id="arrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+                    <polygon points="0 0, 10 3.5, 0 7" fill="black"/>
+                </marker>
+            </defs>
+        </svg>
+    </div>
+    <div class="clear-input">
+        <button onclick="ClearInput()">Reset</button>
+    </div>
+
+</body>
+</html>
