@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
-body, html {
+body,
+html {
     height: 100%;
     margin: 0;
     padding: 0;
@@ -44,7 +45,7 @@ body, html {
     width: 250px;
     font-size: 14px;
     text-align: center;
-    box-shadow: inset 2px 2px 0px rgba(0,0,0,0.5);
+    box-shadow: inset 2px 2px 0px rgba(0, 0, 0, 0.5);
 }
 
 button {
@@ -57,7 +58,7 @@ button {
     cursor: pointer;
     text-transform: uppercase;
     font-size: 12px;
-    box-shadow: 4px 4px 0px rgba(0,0,0,0.5);
+    box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.5);
     transition: all 0.1s;
     image-rendering: pixelated;
 }
@@ -65,12 +66,12 @@ button {
 button:hover {
     background-color: #555;
     transform: translateY(2px);
-    box-shadow: 2px 2px 0px rgba(0,0,0,0.5);
+    box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.5);
 }
 
 button:active {
     transform: translateY(4px);
-    box-shadow: 0px 0px 0px rgba(0,0,0,0.5);
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.5);
 }
 
 .current-input {
@@ -87,18 +88,18 @@ button:active {
     margin: 30px auto;
     background-color: #031e11;
     position: relative;
-    overflow-y: auto;        
-    overflow-x: hidden;       
-    box-shadow: inset 2px 2px 5px rgba(0,0,0,0.5);
+    overflow-y: auto;
+    overflow-x: hidden;
+    box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.5);
     padding: 10px;
     color: #0f0;
     font-size: 12px;
     font-family: 'Press Start 2P', monospace;
     line-height: 1.4;
-    text-shadow: 0px 0px 5px rgba(0,255,0,0.5);
+    text-shadow: 0px 0px 5px rgba(0, 255, 0, 0.5);
     margin-top: 0px;
-    
-    
+
+
     scrollbar-width: thin;
     scrollbar-color: #0f0 #031e11;
 }
@@ -111,7 +112,7 @@ button:active {
     background-color: #111;
     position: relative;
     margin-bottom: 10px;
-    box-shadow: inset 0px 0px 20px rgba(0,255,0,0.2);
+    box-shadow: inset 0px 0px 20px rgba(0, 255, 0, 0.2);
     overflow: hidden;
 }
 
@@ -128,12 +129,10 @@ button:active {
     color: #111;
     font-size: 14px;
     image-rendering: pixelated;
-    text-shadow: 1px 1px 0px rgba(255,255,255,0.5);
+    text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.5);
     transform: rotate(0.5deg);
-    clip-path: polygon(
-        0% 25%, 25% 0%, 75% 0%, 100% 25%,
-        100% 75%, 75% 100%, 25% 100%, 0% 75%
-    );
+    clip-path: polygon(0% 25%, 25% 0%, 75% 0%, 100% 25%,
+            100% 75%, 75% 100%, 25% 100%, 0% 75%);
     transition: all 0.2s;
 }
 
@@ -154,7 +153,7 @@ button:active {
     border-top: 20px solid transparent;
     border-bottom: 20px solid transparent;
     border-left: 30px solid #0f0;
-    filter: drop-shadow(2px 2px 0px rgba(0,0,0,0.5));
+    filter: drop-shadow(2px 2px 0px rgba(0, 0, 0, 0.5));
 }
 
 .state#q13 {
@@ -170,10 +169,11 @@ button:active {
     width: 100%;
     height: 100%;
     pointer-events: none;
-    filter: drop-shadow(1px 1px 0px rgba(0,255,0,0.5));
+    filter: drop-shadow(1px 1px 0px rgba(0, 255, 0, 0.5));
 }
 
-.svg-overlay line, .svg-overlay path {
+.svg-overlay line,
+.svg-overlay path {
     stroke: #0f0;
     stroke-width: 2.5px;
     stroke-linecap: square;
@@ -186,13 +186,78 @@ button:active {
 
 /* Animation for states when they're active */
 @keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.1); }
-    100% { transform: scale(1); }
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
 }
 
 .state.current {
     animation: pulse 0.5s infinite;
     background-color: #ff0;
     box-shadow: 0 0 15px #ff0;
+}
+
+/* AJSHDKJAHSDKJHAKLJSHD  */
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    border: 6px solid #333;
+    background-color: #111;
+    margin: 20px auto;
+    padding: 20px;
+    color: #0f0;
+    font-family: 'Press Start 2P', monospace;
+    box-shadow: inset 0px 0px 20px rgba(0, 255, 0, 0.2);
+    text-shadow: 0px 0px 5px rgba(0, 255, 0, 0.3);
+}
+
+#definitionContainer {
+    width: 770px;
+    font-size: 11px;
+    line-height: 1.4;
+}
+
+#transitionsContainer {
+    width: 700px;
+    margin: 30px auto;
+    border: 6px solid #333;
+    padding: 15px;
+    background-color: #031e11;
+    box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.5);
+    font-family: 'Press Start 2P', monospace;
+    color: #0f0;
+    font-size: 10px;
+    text-shadow: 0px 0px 3px rgba(0, 255, 0, 0.5);
+}
+
+.transitions-table {
+    border-collapse: collapse;
+    width: 100%;
+    text-align: center;
+}
+
+.transitions-table th,
+.transitions-table td {
+    border: 1px solid #0f0;
+    padding: 6px 10px;
+}
+
+.transitions-table th {
+    background-color: #0f0;
+    color: #111;
+}
+
+.transitions-table td {
+    background-color: #000;
 }
