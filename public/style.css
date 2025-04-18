@@ -5,18 +5,24 @@ html {
     height: 100%;
     margin: 0;
     padding: 0;
-    background-color: #c0c0c0;
+    background-color: #143f14;
     font-family: 'Press Start 2P', cursive;
-    color: #111;
+    color: #000000;
     image-rendering: pixelated;
-    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAEklEQVQImWNgYGD4z0AswK4SAFXuAf8EPy+xAAAAAElFTkSuQmCC");
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAGElEQVQImWNkYGD4z4AE/jMwMCAxCAMlAAAcEAEBGDyZWgAAAABJRU5ErkJggg==");
     background-repeat: repeat;
+    animation: background-scroll 10s linear infinite;
+}
+
+@keyframes background-scroll {
+    from { background-position: 0 0; }
+    to { background-position: 0 100px; }
 }
 
 .title {
     text-align: center;
     margin-top: 20px;
-    text-shadow: 2px 2px 0px #888;
+    text-shadow: 2px 2px 0px #e9e9e9;
 }
 
 .title h1 {
@@ -39,7 +45,7 @@ html {
 #keyInput {
     font-family: 'Press Start 2P', cursive;
     background-color: #000;
-    color: #0f0;
+    color: rgb(255, 255, 255);
     border: 4px solid #333;
     padding: 10px;
     width: 250px;
@@ -78,6 +84,7 @@ button:active {
     font-weight: normal;
     margin-bottom: 10px;
     font-size: 12px;
+    color: #e9e9e9;
 }
 
 .screen-board {
@@ -260,4 +267,22 @@ button:active {
 
 .transitions-table td {
     background-color: #000;
+}
+.transition-label {
+    font-size: 6px;
+    font-family: 'Press Start 2P', monospace;
+    fill: #0f0;
+    text-anchor: middle;
+    dominant-baseline: middle;
+    font-weight: normal;
+    background-color: rgba(0,0,0,0.5);
+    padding: 2px;
+}
+
+
+
+.svg-overlay line, .svg-overlay path {
+    stroke: #0f0;
+    stroke-width: 2px;
+    
 }
