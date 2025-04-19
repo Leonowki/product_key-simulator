@@ -11,68 +11,101 @@
 
 <body>
     <div class="title">
-        <h1>NFA simulator</h1>
+        <h1>NFA Simulator</h1>
         <p>License Key in a format of XXXX-XXXX-XXXX</p>
     </div>
-    <div>
-        <div class="user-input">
-            <div>
-                <input type="text" id="keyInput" placeholder="XXXX-XXXX-XXXX">
-            </div>
-            <div>
-                <button onclick="CheckValidity()">Validate input</button>
-                <h5 class="current-input" id="userInput">Input:</h5>
-            </div>
-        </div>
-        <!-- terminal-ish for display -->
-        <div class="screen-board" id="user-screen">
 
+    <div class="user-input">
+        <div>
+            <input type="text" id="keyInput" placeholder="XXXX-XXXX-XXXX">
+        </div>
+        <div>
+            <button onclick="CheckValidity()">Validate input</button>
+            <h5 class="current-input" id="userInput">Input:</h5>
+        </div>
+    </div>
+
+    <!-- Terminal-ish for display -->
+    <div class="screen-board" id="user-screen"></div>
+
+    <div class="FA-with-definition">
+        <!-- Left side: Definition -->
+        <div class="container" id="definitionContainer">
+            <h2>NFA Definition</h2>
+            <p>License keys in the form XXXX-XXXX-XXXX</p>
+            <p>NFA A = { Q, Σ, F, q0, δ }</p>
+            <p>Q = {q0, q1, q2, q3, q4, q5, q6, q7, q8, q9, q10, q11, q12, q13, q14}</p>
+            <p>Σ = {0, 1, 2, ..., 9, A, B, ..., Z, -}</p>
+            <p>F = {q14}</p>
+            <p>q0 = q0</p>
         </div>
 
+        <!-- Center: Automaton Visualization -->
         <div class="automaton-board" id="automatonBoard">
-            <!-- States here -->
+            <!-- Initial state pointer -->
             <div class="initial" style="top: 30px; left: 5px;"></div>
+
+            <!-- States -->
             <div class="state" id="q0" style="top: 20px; left: 35px;">q0</div>
             <div class="state" id="q1" style="top: 20px; left: 170px;">q1</div>
             <div class="state" id="q2" style="top: 20px; left: 300px;">q2</div>
             <div class="state" id="q3" style="top: 20px; left: 440px;">q3</div>
             <div class="state" id="q4" style="top: 20px; left: 560px;">q4</div>
-            <div class="state" id="q5" style="top: 160px; left:35px;">q5</div>
-            <div class="state" id="q6" style="top: 160px; left:170px">q6</div>
-            <div class="state" id="q7" style="top: 160px; left:300px">q7</div>
-            <div class="state" id="q8" style="top: 160px; left:440px">q8</div>
-            <div class="state" id="q9" style="top: 160px; left:560px">q9</div>
-            <div class="state" id="q10" style="top: 320px; left:35px">q10</div>
-            <div class="state" id="q11" style="top: 320px; left:170px">q11</div>
-            <div class="state" id="q12" style="top: 320px; left:300px">q12</div>
-            <div class="state" id="q13" style="top: 320px; left:440px">q13</div>
-
+            <div class="state" id="q5" style="top: 160px; left: 35px;">q5</div>
+            <div class="state" id="q6" style="top: 160px; left: 170px;">q6</div>
+            <div class="state" id="q7" style="top: 160px; left: 300px;">q7</div>
+            <div class="state" id="q8" style="top: 160px; left: 440px;">q8</div>
+            <div class="state" id="q9" style="top: 160px; left: 560px;">q9</div>
+            <div class="state" id="q10" style="top: 320px; left: 35px;">q10</div>
+            <div class="state" id="q11" style="top: 320px; left: 170px;">q11</div>
+            <div class="state" id="q12" style="top: 320px; left: 300px;">q12</div>
+            <div class="state" id="q13" style="top: 320px; left: 440px;">q13</div>
 
             <!-- SVG arrows -->
             <svg class="svg-overlay">
-
                 <!-- Top row q0 to q4 -->
-                <line x1="98" y1="50" x2="170" y2="50" stroke="black" marker-end="url(#arrow)" /> <!-- q0 to q1 -->
-                <line x1="232" y1="50" x2="300" y2="50" stroke="black" marker-end="url(#arrow)" /> <!-- q1 to q2 -->
-                <line x1="363" y1="50" x2="440" y2="50" stroke="black" marker-end="url(#arrow)" /> <!-- q2 to q3 -->
-                <line x1="501" y1="50" x2="560" y2="50" stroke="black" marker-end="url(#arrow)" /> <!-- q3 to q4 -->
+                <line x1="98" y1="50" x2="170" y2="50" stroke="#0f0" marker-end="url(#arrow)" />
+                <text x="130" y="40" class="transition-label">[A-Z,0-9]</text>
+
+                <line x1="232" y1="50" x2="300" y2="50" stroke="#0f0" marker-end="url(#arrow)" />
+                <text x="260" y="40" class="transition-label">[A-Z,0-9]</text>
+
+                <line x1="363" y1="50" x2="440" y2="50" stroke="#0f0" marker-end="url(#arrow)" />
+                <text x="400" y="40" class="transition-label">[A-Z,0-9]</text>
+
+                <line x1="501" y1="50" x2="560" y2="50" stroke="#0f0" marker-end="url(#arrow)" />
+                <text x="525" y="40" class="transition-label">[A-Z,0-9]</text>
 
                 <!-- q4 to q5 (curve) -->
-                <path d="M 580 81 Q 350 120 95 180" stroke="black" fill="transparent" marker-end="url(#arrow)" />
+                <path d="M 580 81 Q 350 120 95 180" stroke="#0f0" fill="transparent" marker-end="url(#arrow)" />
+                <text x="330" y="110" class="transition-label">[-]</text>
 
                 <!-- Middle row q5 to q9 -->
-                <line x1="97" y1="190" x2="170" y2="190" stroke="black" marker-end="url(#arrow)" /> <!-- q5 to q6 -->
-                <line x1="232" y1="190" x2="300" y2="190" stroke="black" marker-end="url(#arrow)" /> <!-- q6 to q7 -->
-                <line x1="362" y1="190" x2="440" y2="190" stroke="black" marker-end="url(#arrow)" /> <!-- q7 to q8 -->
-                <line x1="502" y1="190" x2="560" y2="190" stroke="black" marker-end="url(#arrow)" /> <!-- q8 to q9 -->
+                <line x1="97" y1="190" x2="170" y2="190" stroke="#0f0" marker-end="url(#arrow)" />
+                <text x="138" y="180" class="transition-label">[A-Z,0-9]</text>
+
+                <line x1="232" y1="190" x2="300" y2="190" stroke="#0f0" marker-end="url(#arrow)" />
+                <text x="260" y="180" class="transition-label">[A-Z,0-9]</text>
+
+                <line x1="362" y1="190" x2="440" y2="190" stroke="#0f0" marker-end="url(#arrow)" />
+                <text x="400" y="180" class="transition-label">[A-Z,0-9]</text>
+
+                <line x1="502" y1="190" x2="560" y2="190" stroke="#0f0" marker-end="url(#arrow)" />
+                <text x="525" y="180" class="transition-label">[A-Z,0-9]</text>
 
                 <!-- q9 to q10 (curve) -->
-                <path d="M 580 221 Q 590 230 90 330" stroke="black" fill="transparent" marker-end="url(#arrow)" />
+                <path d="M 580 221 Q 590 230 90 330" stroke="#0f0" fill="transparent" marker-end="url(#arrow)" />
+                <text x="330" y="270" class="transition-label">[-]</text>
 
                 <!-- Bottom row q10 to q14 -->
-                <line x1="97" y1="350" x2="170" y2="350" stroke="black" marker-end="url(#arrow)" /> <!-- q10 to q11 -->
-                <line x1="232" y1="350" x2="300" y2="350" stroke="black" marker-end="url(#arrow)" /> <!-- q11 to q12 -->
-                <line x1="362" y1="350" x2="440" y2="350" stroke="black" marker-end="url(#arrow)" /> <!-- q12 to q13 -->
+                <line x1="97" y1="350" x2="170" y2="350" stroke="#0f0" marker-end="url(#arrow)" />
+                <text x="130" y="340" class="transition-label">[A-Z,0-9]</text>
+
+                <line x1="232" y1="350" x2="300" y2="350" stroke="#0f0" marker-end="url(#arrow)" />
+                <text x="260" y="340" class="transition-label">[A-Z,0-9]</text>
+
+                <line x1="362" y1="350" x2="440" y2="350" stroke="#0f0" marker-end="url(#arrow)" />
+                <text x="400" y="340" class="transition-label">[A-Z,0-9]</text>
 
                 <!-- Arrowhead definition -->
                 <defs>
@@ -82,26 +115,10 @@
                 </defs>
             </svg>
         </div>
-        <div class="clear-input">
-            <button onclick="ClearInput()">Reset</button>
-        </div>
 
-
-        <!-- KEWEJWHAJHDKJASHDL KEKW -->
-        <div class="container" id="definitionContainer">
-            <div>
-                <h2>NFA Definition</h2>
-                <p>License keys in the form XXXX-XXXX-XXXX </p>
-                <p>NFA A = { Q, Σ, F, q0, δ } </p>
-                <p>Q = {q0, q1, q2, q3, q4, q5, q6, q7, q8, q9, q10, q11, q12, q13, q14}</p>
-                <p>Σ = {0, 1, 2, ..., 9, A, B, ..., Z, -}</p>
-                <p>F = {q14}</p>
-                <p>q0 = q0 </p>
-            </div>
-        </div>
-
+        <!-- Right side: Transitions Table -->
         <div class="container" id="transitionsContainer">
-            <h2>State Transitions</h2>
+            <h5>State Transitions</h5>
             <p>δ =</p>
             <table class="transitions-table">
                 <thead>
@@ -206,7 +223,12 @@
                 </tbody>
             </table>
         </div>
-        <!-- KEKW -->
+    </div>
+
+    <div class="clear-input">
+        <button onclick="clearInput()">Reset</button>
+    </div>
+
 </body>
 
 </html>
