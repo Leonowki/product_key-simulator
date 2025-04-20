@@ -65,7 +65,7 @@ function outOfRangeInput(input, i) {
     if (i === 0) {
         clearScreen();
         updateScreen("Processing input: " + input);
-        updateScreen("Input is too long (expected 14 characters)");
+        // updateScreen("Input is too long (expected 14 characters)");
     }
 
     if (i >= 14) {
@@ -123,7 +123,7 @@ function animateValidLengthInput(input, i = 0) {
     if (i === 0) {
         clearScreen();
         updateScreen("Processing input: " + input);
-        updateScreen("Input has correct length (14 characters)");
+        // updateScreen("Input has correct length (14 characters)");
     }
 
     if (i >= 14) {
@@ -195,7 +195,7 @@ function CheckValidity() {
     updateScreen("Starting validation...");
 
     let stringLength = input.length;
-    console.log(stringLength);
+    // console.log(stringLength);
     //create a loop for showing input in each states 
     //out of range input
     if (stringLength > 14) {
